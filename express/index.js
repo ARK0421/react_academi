@@ -15,6 +15,12 @@ app.get("/hello", () => {
   console.log("/hello 주소 요청!");
 });
 
+app.get("/qs", (req) => {
+  console.log(req.query);
+  const { p1, p2 } = req.query;
+  console.log(`p1: ${p1}, p2:${p2}`);
+});
+
 app.get("/:id", (req) => {
   console.log(req.params);
   const { id } = req.params;
