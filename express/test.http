@@ -4,4 +4,16 @@ get http://localhost:8000/hello
 get http://localhost:8000/142857
 
 ###
-get http://localhost:8000/qs?p1=2&p2=aa
+get http://localhost:8000/qs?p1=2&p2=ass_ass_in's_creed
+
+###
+post http://localhost:8000/hello
+
+###
+post http://localhost:8000/post-req
+Content-Type: application/json; charset=UTF-8;
+
+{
+    "name":"Rose",
+    "age" : 20
+}
