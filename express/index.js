@@ -66,3 +66,21 @@ app.get("/nations/list", (req, res) => {
     res.json(results);
   });
 });
+
+// 상세 조회
+app.get("/nations/:id", (req, res) => {
+  console.log(req.params.id);
+  const id = req.params.id;
+  const sql = "select * from nations_table where id=?";
+  db.query(sql, [id], (err, results, fields) => {
+    console.log("err", err);
+    console.log("fields", fields);
+    console.log("results", results);
+    if (results.length == 0) {
+      // 조회 결과 없음
+      res.status(404).send("요청하신 데이터를 찾을 수 없습니다.");
+    } else {
+      res.status(200).json(results);
+    }
+  });
+});
