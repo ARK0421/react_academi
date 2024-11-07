@@ -23,3 +23,24 @@ get http://localhost:8000/nations/list
 
 ###
 get http://localhost:8000/nations/3
+
+###
+post http://localhost:8000/nations/save
+Content-Type: application/json; charset=UTF-8
+
+{
+    "name":"Italia",
+    "capital":"Rome",
+    "population":60390000
+}
+
+###
+put http://localhost:8000/nations/1
+Content-Type: application/json; charset=UTF-8
+
+{
+    "id" : 1,
+    "name" : "Korea",
+    "capital" : "Seoul",
+    "population" : 51100000
+}
