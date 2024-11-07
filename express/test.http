@@ -11,9 +11,12 @@ post http://localhost:8000/hello
 
 ###
 post http://localhost:8000/post-req
-Content-Type: application/json; charset=UTF-8;
+Content-Type: application/json; charset=UTF-8
 
 {
     "name":"Rose",
     "age" : 20
 }
+
+###
+get http://localhost:8000/nations/list

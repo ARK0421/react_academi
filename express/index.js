@@ -1,5 +1,5 @@
 import express from "express";
-import mysql from "mysql";
+import mysql2 from "mysql2";
 
 const app = express();
 
@@ -9,7 +9,7 @@ app.listen(8000, () => {
   console.log("서버 시작!");
 });
 
-const db = mysql.createConnection({
+const db = mysql2.createConnection({
   host: "127.0.0.1",
   user: "user_ex",
   password: "1234",
@@ -53,4 +53,16 @@ app.post("/post-req", (req) => {
   console.log(req.body.name);
   const { name, age } = req.body;
   console.log(`name: ${name}, age:${age}`);
+});
+
+// 목록 조회
+app.get("/nations/list", (req, res) => {
+  const sql = "select * from nations_table";
+  db.query(sql, (err, results, fields) => {
+    console.log("err", err);
+    console.log("fields", fields);
+    console.log("results", results);
+
+    res.json(results);
+  });
 });
