@@ -1,7 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+
 const Save = () => {
+  const navigate = useNavigate();
+
   const [member, setMember] = useState({
     member_email: "",
     member_password: "",
@@ -27,6 +30,7 @@ const Save = () => {
       member: member,
     });
     console.log(res);
+    navigate("/");
   };
 
   return (
