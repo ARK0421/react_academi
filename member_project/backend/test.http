@@ -1,1 +1,4 @@
 get http://localhost:8027/
+
+###
+get http://localhost:8027/member/list

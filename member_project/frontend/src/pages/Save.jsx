@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 const Save = () => {
   const [member, setMember] = useState({
     member_email: "",
@@ -18,10 +19,20 @@ const Save = () => {
     console.log(member);
   };
 
+  const memberSave = async (e) => {
+    e.preventDefault();
+    console.log(member);
+
+    let res = await axios.post("http://localhost:8027/member/save", {
+      member: member,
+    });
+    console.log(res);
+  };
+
   return (
     <>
       <h2>Save.jsx</h2>
-      <form>
+      <form onSubmit={memberSave}>
         E-mail :{" "}
         <input
           type="text"
