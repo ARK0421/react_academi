@@ -6,19 +6,17 @@ const Save = () => {
   const navigate = useNavigate();
 
   const [board, setBoard] = useState({
-    boardTitle:"",
-    boardWriter:"",
-    boardPass:"",
-    boardContents:"",
-    boardHits:"",
-    createdAt:""
+    boardTitle: "",
+    boardWriter: "",
+    boardPass: "",
+    boardContents: "",
   });
 
   const inputBoard = (e) => {
-    const {name, value} = e.target;
+    const { name, value } = e.target;
     setBoard({
       ...board,
-      [name] : value,
+      [name]: value,
     });
     console.log(board);
   };
@@ -28,10 +26,10 @@ const Save = () => {
     console.log(board);
 
     let res = await axios.post("http://localhost:8027/board/save", {
-      board:board,
+      board: board,
     });
     console.log(res);
-    navigate("/");
+    navigate("/list");
   };
 
   return (

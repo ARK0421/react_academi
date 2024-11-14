@@ -29,22 +29,8 @@ app.get("/", () => {
 });
 
 app.post("/board/save", (req, res) => {
-  const {
-    boardTitle,
-    boardContents,
-    boardPass,
-    boardWriter,
-    boardHits,
-    createdAt,
-  } = req.body.board;
-  console.log(
-    boardTitle,
-    boardContents,
-    boardWriter,
-    boardPass,
-    boardHits,
-    createdAt
-  );
+  const { boardTitle, boardContents, boardPass, boardWriter } = req.body.board;
+  console.log(boardTitle, boardContents, boardWriter, boardPass);
 
   const sql =
     "insert into board_table(boardTitle, boardContents, boardPass, boardWriter) values(?,?,?,?)";
