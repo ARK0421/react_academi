@@ -6,12 +6,7 @@ const BoardDetail = () => {
   const { id } = useParams();
   console.log({ id });
 
-  const [board, setBoard] = useState({
-    boardTitle: "",
-    boardContents: "",
-    boardWriter: "",
-    boardHits: "",
-  });
+  const [board, setBoard] = useState("");
   useEffect(() => {
     const board_db = axios
       .get(`http://localhost:8027/board/detail/${id}`)

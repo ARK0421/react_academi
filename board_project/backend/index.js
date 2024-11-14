@@ -57,12 +57,20 @@ app.get("/board/detail/:id", (req, res) => {
   const id = req.params.id;
   const sql =
     "select boardTitle, boardContents, boardWriter, boardHits, createdAt from board_table where id=?";
+
+  const hitsSql = "update board_table set boardHits = boardHits +1 where id=?";
+
+  db.query(hitsSql, [id], (err, results, fields) => {
+    res.status(200);
+  });
+
   db.query(sql, [id], (err, results, fields) => {
     if (results.length == 0) {
       // 조회 결과 없음
       res.status(404).send("요청하신 데이터를 찾을 수 없습니다.");
     } else {
       console.log(results);
+
       res.status(200).json(results);
     }
   });
