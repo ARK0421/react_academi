@@ -19,28 +19,34 @@ const BoardDetail = () => {
 
   return (
     <>
-      <div>
-        Title :{" "}
-        <input
-          type="text"
-          name="boardTitle"
-          value={board.boardTitle}
-          readOnly
-        />
-        <br />
-        Content :{" "}
-        <textarea name="boardContents" value={board.boardContents} readOnly />
-        <br />
-        Writer :{" "}
-        <input
-          type="text"
-          name="boardWriter"
-          value={board.boardWriter}
-          readOnly
-        />
-        <br />
-        Hits : <input type="text" name="boardPass" value={board.boardHits} />
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <td>id</td>
+            <td>{board.id}</td>
+          </tr>
+          <tr>
+            <td>Title</td>
+            <td>{board.boardTitle}</td>
+          </tr>
+          <tr>
+            <td>Writer</td>
+            <td>{board.boardWriter}</td>
+          </tr>
+          <tr>
+            <td>Hits</td>
+            <td>{board.boardHits}</td>
+          </tr>
+          <tr>
+            <td>createdAt</td>
+            <td>{board.createdAt}</td>
+          </tr>
+          <tr>
+            <td>Contents</td>
+            <td>{board.boardContents}</td>
+          </tr>
+        </thead>
+      </table>
     </>
   );
 };

@@ -56,7 +56,7 @@ app.get("/board/list", (req, res) => {
 app.get("/board/detail/:id", (req, res) => {
   const id = req.params.id;
   const sql =
-    "select boardTitle, boardContents, boardWriter, boardHits, createdAt from board_table where id=?";
+    "select id,boardTitle, boardContents, boardWriter, boardHits, createdAt from board_table where id=?";
 
   const hitsSql = "update board_table set boardHits = boardHits +1 where id=?";
 
