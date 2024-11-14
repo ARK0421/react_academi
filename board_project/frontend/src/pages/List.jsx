@@ -31,11 +31,14 @@ const List = () => {
           {list.map((board) => (
             <tr key={board.id}>
               <td>{board.id}</td>
-                <td>
-              <Link to={`/detail/${board.id}`} >
-                  {board.boardTitle}
-              </Link>
-                </td>
+              <td>
+                {/* 
+                <Link to={{
+                  pathname:`/detail/${board.id}`,
+                }} 
+                 */}
+                <Link to={`/detail/${board.id}`}>{board.boardTitle}</Link>
+              </td>
               <td>{board.boardWriter}</td>
               <td>{board.boardHits}</td>
               <td>{board.createdAt}</td>
