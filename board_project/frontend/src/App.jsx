@@ -1,15 +1,15 @@
-import './App.css'
-import { BrowserRouter, Link, Routes, Route  } from 'react-router-dom';
+import "./App.css";
+import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import Save from "./pages/Save";
 import List from "./pages/List";
-import { BoardDetail } from './pages/BoardDetail';
+import BoardDetail from "./pages/BoardDetail";
 
 function App() {
   return (
     <>
-    <h1>Board Project</h1>
+      <h1>Board Project</h1>
       <BrowserRouter>
         <Header />
         <Routes>
@@ -20,7 +20,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
